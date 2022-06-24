@@ -11,7 +11,7 @@
 		FC53E1152863421D00CE466D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53E1142863421D00CE466D /* SceneDelegate.swift */; };
 		FC53E11C2863422000CE466D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC53E11B2863422000CE466D /* Assets.xcassets */; };
 		FC53E11F2863422000CE466D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC53E11D2863422000CE466D /* LaunchScreen.storyboard */; };
-		FC53E1272863470000CE466D /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC53E1262863470000CE466D /* Storyboard.storyboard */; };
+		FC53E1272863470000CE466D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC53E1262863470000CE466D /* Main.storyboard */; };
 		FC53E1292863475B00CE466D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53E1282863475B00CE466D /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +22,7 @@
 		FC53E11B2863422000CE466D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC53E11E2863422000CE466D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC53E1202863422000CE466D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC53E1262863470000CE466D /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		FC53E1262863470000CE466D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FC53E1282863475B00CE466D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +60,7 @@
 				FC53E1282863475B00CE466D /* TableViewController.swift */,
 				FC53E1142863421D00CE466D /* SceneDelegate.swift */,
 				FC53E11B2863422000CE466D /* Assets.xcassets */,
-				FC53E1262863470000CE466D /* Storyboard.storyboard */,
+				FC53E1262863470000CE466D /* Main.storyboard */,
 				FC53E11D2863422000CE466D /* LaunchScreen.storyboard */,
 				FC53E1202863422000CE466D /* Info.plist */,
 			);
@@ -127,7 +127,7 @@
 			files = (
 				FC53E11F2863422000CE466D /* LaunchScreen.storyboard in Resources */,
 				FC53E11C2863422000CE466D /* Assets.xcassets in Resources */,
-				FC53E1272863470000CE466D /* Storyboard.storyboard in Resources */,
+				FC53E1272863470000CE466D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

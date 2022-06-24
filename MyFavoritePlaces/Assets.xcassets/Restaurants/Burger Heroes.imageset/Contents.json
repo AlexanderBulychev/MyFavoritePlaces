@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Burger Heroes.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

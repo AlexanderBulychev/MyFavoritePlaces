@@ -9,18 +9,28 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    let restaurantNames = [
+        "Burger Heroes", "Kitchen", "Bonsai", "Дастархан",
+        "Индокитай", "X.O", "Балкан Гриль", "Sherlock Holmes",
+        "Speak Easy", "Morris Pub", "Вкусные истории",
+        "Классик", "Love&Life", "Шок", "Бочка"
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-}
+    }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        restaurantNames.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        content.text = restaurantNames[indexPath.row]
+        content.image = UIImage(named: restaurantNames[indexPath.row])
+        cell.contentConfiguration = content
+        return cell
     }
-
 }
