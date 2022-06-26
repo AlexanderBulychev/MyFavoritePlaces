@@ -30,7 +30,14 @@ class TableViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         content.text = restaurantNames[indexPath.row]
         content.image = UIImage(named: restaurantNames[indexPath.row])
+        content.imageProperties.cornerRadius = cell.frame.size.height / 2
+        
         cell.contentConfiguration = content
         return cell
+    }
+
+    // MARK: - Table View Delegate
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        85
     }
 }
