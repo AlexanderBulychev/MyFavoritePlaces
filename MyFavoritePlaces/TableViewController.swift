@@ -30,4 +30,6 @@ class TableViewController: UITableViewController {
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         return cell
     }
+
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 }
