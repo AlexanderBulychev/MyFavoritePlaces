@@ -252,6 +252,9 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="BZ3-P6-8VH"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageOfPlace" destination="2xB-T1-Rfr" id="2CW-0w-rSE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTg-Kj-t1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="FeB-hi-HX1" userLabel="Exit" sceneMemberID="exit"/>
