@@ -171,7 +171,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnT-0R-P4O">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="27.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20.5" id="O77-Jr-7C9"/>
+                                                                <constraint firstAttribute="height" constant="20" id="O77-Jr-7C9"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
                                                             <nil key="textColor"/>
@@ -234,6 +234,45 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="TopLeft" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="200" id="CrK-uk-oxI">
+                                        <rect key="frame" x="0.0" y="519.5" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CrK-uk-oxI" id="5S9-Re-DsR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Omk-87-FPb">
+                                                    <rect key="frame" x="16" y="8" width="382" height="184"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments &amp; Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lj-Ud-PL8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="C7g-mB-yEZ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add your cooments about visiting this place:" translatesAutoresizingMaskIntoConstraints="NO" id="iLI-8y-eec">
+                                                            <rect key="frame" x="0.0" y="28" width="382" height="156"/>
+                                                            <color key="textColor" systemColor="labelColor"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="0Gv-4g-2vv" id="s9S-6s-Ahh"/>
+                                                            </connections>
+                                                        </textView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Omk-87-FPb" firstAttribute="leading" secondItem="5S9-Re-DsR" secondAttribute="leading" constant="16" id="thv-Lj-9Du"/>
+                                                <constraint firstItem="Omk-87-FPb" firstAttribute="top" secondItem="5S9-Re-DsR" secondAttribute="top" constant="8" id="z27-Yy-NL6"/>
+                                                <constraint firstAttribute="bottom" secondItem="Omk-87-FPb" secondAttribute="bottom" constant="8" id="z44-lF-LoY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Omk-87-FPb" secondAttribute="trailing" constant="16" id="zQI-au-XCi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -249,11 +288,20 @@
                                 <segue destination="FeB-hi-HX1" kind="unwind" unwindAction="cancelAction:" id="hgX-uG-1jT"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BZ3-P6-8VH"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BZ3-P6-8VH">
+                            <connections>
+                                <action selector="saveButtonAction:" destination="0Gv-4g-2vv" id="BDD-9m-4iz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageOfPlace" destination="2xB-T1-Rfr" id="2CW-0w-rSE"/>
+                        <outlet property="placeComment" destination="iLI-8y-eec" id="Pr6-l2-hm3"/>
+                        <outlet property="placeImage" destination="2xB-T1-Rfr" id="2CW-0w-rSE"/>
+                        <outlet property="placeLocation" destination="xU2-gE-zrQ" id="uNB-f3-ukn"/>
+                        <outlet property="placeName" destination="2Ua-Ta-RLF" id="WMt-sK-yPh"/>
+                        <outlet property="placeType" destination="PRa-hs-bEf" id="Tdc-Wt-1LF"/>
+                        <outlet property="saveButton" destination="BZ3-P6-8VH" id="mvB-xU-626"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTg-Kj-t1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -301,6 +349,9 @@
     </scenes>
     <resources>
         <image name="Photo" width="195" height="196"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -10,11 +10,24 @@ import PhotosUI
 
 final class NewPlaceTableViewController: UITableViewController {
 
-    @IBOutlet weak var imageOfPlace: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+
+    @IBOutlet weak var placeName: UITextField!
+    @IBOutlet weak var placeLocation: UITextField!
+    @IBOutlet weak var placeType: UITextField!
+    @IBOutlet weak var placeImage: UIImageView!
+    @IBOutlet weak var placeComment: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        placeComment.text = "Add your comment here"
+        saveButton.isEnabled = false
         tableView.tableFooterView = UIView()
+
+        placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+    }
+
+    @IBAction func saveButtonAction(_ sender: UIBarButtonItem) {
     }
 
     // MARK: - Table View Delegate
@@ -59,6 +72,18 @@ extension NewPlaceTableViewController: UITextFieldDelegate {
         textField.becomeFirstResponder()
         return true
     }
+
+    @objc
+    private func textFieldChanged() {
+        saveButton.isEnabled = placeName.text?.isEmpty ?? <#default value#> ? false : true
+    }
+}
+
+extension NewPlaceTableViewController: UITextViewDelegate {
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.becomeFirstResponder()
+        return true
+    }
 }
 
 // MARK: - Work with Photo
@@ -75,9 +100,9 @@ extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
         }
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imageOfPlace.image = info[.editedImage] as? UIImage
-        imageOfPlace.contentMode = .scaleAspectFill
-        imageOfPlace.clipsToBounds = true
+        placeImage.image = info[.editedImage] as? UIImage
+        placeImage.contentMode = .scaleAspectFill
+        placeImage.clipsToBounds = true
         dismiss(animated: true)
 
     }
@@ -99,9 +124,9 @@ extension NewPlaceTableViewController: PHPickerViewControllerDelegate {
             result.itemProvider.loadObject(ofClass: UIImage.self) { (object, error) in
                 if let image = object as? UIImage {
                     DispatchQueue.main.async {
-                        self.imageOfPlace.image = image
-                        self.imageOfPlace.contentMode = .scaleAspectFill
-                        self.imageOfPlace.clipsToBounds = true
+                        self.placeImage.image = image
+                        self.placeImage.contentMode = .scaleAspectFill
+                        self.placeImage.clipsToBounds = true
                     }
                 }
             }
