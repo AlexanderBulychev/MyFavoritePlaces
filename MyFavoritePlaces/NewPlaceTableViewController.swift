@@ -10,25 +10,49 @@ import PhotosUI
 
 final class NewPlaceTableViewController: UITableViewController {
 
+    var newPlace: Place?
+    var imageIsChanged = false
+
     @IBOutlet weak var saveButton: UIBarButtonItem!
 
     @IBOutlet weak var placeName: UITextField!
     @IBOutlet weak var placeLocation: UITextField!
     @IBOutlet weak var placeType: UITextField!
     @IBOutlet weak var placeImage: UIImageView!
-    @IBOutlet weak var placeComment: UITextView!
+    @IBOutlet weak var placeDescription: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        placeComment.text = "Add your comment here"
-        saveButton.isEnabled = false
         tableView.tableFooterView = UIView()
+        saveButton.isEnabled = false
 
         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+
+        placeDescription.text = "Add your comment here"
     }
 
-    @IBAction func saveButtonAction(_ sender: UIBarButtonItem) {
+    func saveNewPlace() {
+        var image: UIImage?
+        if imageIsChanged {
+            image = placeImage.image
+        } else {
+            image = #imageLiteral(resourceName: "imagePlaceholder")
+        }
+
+        newPlace = Place(
+            name: placeName.text!,
+            location: placeLocation.text,
+            type: placeType.text,
+            image: image,
+            description: placeDescription.text,
+            restaurantImage: nil
+        )
     }
+
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
+
 
     // MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -75,7 +99,7 @@ extension NewPlaceTableViewController: UITextFieldDelegate {
 
     @objc
     private func textFieldChanged() {
-        saveButton.isEnabled = placeName.text?.isEmpty ?? <#default value#> ? false : true
+        saveButton.isEnabled = placeName.text?.isEmpty ?? false ? false : true
     }
 }
 
@@ -131,6 +155,8 @@ extension NewPlaceTableViewController: PHPickerViewControllerDelegate {
                 }
             }
         }
+
+        imageIsChanged = true
         dismiss(animated: true)
     }
 }

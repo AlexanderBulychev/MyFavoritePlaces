@@ -285,23 +285,23 @@
                     <navigationItem key="navigationItem" title="New Place" id="hUf-yi-mnX">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8s4-zN-ABO">
                             <connections>
-                                <segue destination="FeB-hi-HX1" kind="unwind" unwindAction="cancelAction:" id="hgX-uG-1jT"/>
+                                <action selector="cancelAction:" destination="0Gv-4g-2vv" id="mDE-1m-pXG"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="BZ3-P6-8VH">
                             <connections>
-                                <action selector="saveButtonAction:" destination="0Gv-4g-2vv" id="BDD-9m-4iz"/>
+                                <segue destination="FeB-hi-HX1" kind="unwind" unwindAction="unwindSegue:" id="SYo-cs-LkJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="placeComment" destination="iLI-8y-eec" id="Pr6-l2-hm3"/>
+                        <outlet property="placeDescription" destination="iLI-8y-eec" id="Pr6-l2-hm3"/>
                         <outlet property="placeImage" destination="2xB-T1-Rfr" id="2CW-0w-rSE"/>
                         <outlet property="placeLocation" destination="xU2-gE-zrQ" id="uNB-f3-ukn"/>
                         <outlet property="placeName" destination="2Ua-Ta-RLF" id="WMt-sK-yPh"/>
                         <outlet property="placeType" destination="PRa-hs-bEf" id="Tdc-Wt-1LF"/>
-                        <outlet property="saveButton" destination="BZ3-P6-8VH" id="mvB-xU-626"/>
+                        <outlet property="saveButton" destination="BZ3-P6-8VH" id="a5N-ig-wdr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTg-Kj-t1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
