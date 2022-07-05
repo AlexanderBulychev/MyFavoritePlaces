@@ -17,6 +17,7 @@
 		FC53E14F286807DC00CE466D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53E14E286807DB00CE466D /* CustomTableViewCell.swift */; };
 		FC53E15128680C6200CE466D /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53E15028680C6200CE466D /* PlaceModel.swift */; };
 		FC7DCAB9286BEE8900843998 /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7DCAB8286BEE8900843998 /* NewPlaceTableViewController.swift */; };
+		FC801B21287405FF0074FD7C /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC801B20287405FF0074FD7C /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FC53E14E286807DB00CE466D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		FC53E15028680C6200CE466D /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		FC7DCAB8286BEE8900843998 /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
+		FC801B20287405FF0074FD7C /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,16 +88,17 @@
 		FC53E1112863421D00CE466D /* MyFavoritePlaces */ = {
 			isa = PBXGroup;
 			children = (
-				FC53E1122863421D00CE466D /* AppDelegate.swift */,
 				FC53E15028680C6200CE466D /* PlaceModel.swift */,
+				FC801B20287405FF0074FD7C /* StorageManager.swift */,
 				FC53E1282863475B00CE466D /* TableViewController.swift */,
 				FC53E14E286807DB00CE466D /* CustomTableViewCell.swift */,
 				FC7DCAB8286BEE8900843998 /* NewPlaceTableViewController.swift */,
+				FC53E1122863421D00CE466D /* AppDelegate.swift */,
 				FC53E1142863421D00CE466D /* SceneDelegate.swift */,
+				FC53E1202863422000CE466D /* Info.plist */,
 				FC53E11B2863422000CE466D /* Assets.xcassets */,
 				FC53E1262863470000CE466D /* Main.storyboard */,
 				FC53E11D2863422000CE466D /* LaunchScreen.storyboard */,
-				FC53E1202863422000CE466D /* Info.plist */,
 			);
 			path = MyFavoritePlaces;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				FC7DCAB9286BEE8900843998 /* NewPlaceTableViewController.swift in Sources */,
 				FC53E1132863421D00CE466D /* AppDelegate.swift in Sources */,
 				FC53E1292863475B00CE466D /* TableViewController.swift in Sources */,
+				FC801B21287405FF0074FD7C /* StorageManager.swift in Sources */,
 				FC53E15128680C6200CE466D /* PlaceModel.swift in Sources */,
 				FC53E14F286807DC00CE466D /* CustomTableViewCell.swift in Sources */,
 				FC53E1152863421D00CE466D /* SceneDelegate.swift in Sources */,
